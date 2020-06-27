@@ -9,6 +9,6 @@ jobs:
       - name: Haskell
         uses: actions/setup-haskell@v1.1
       - name: deps
-        run: cabal install random
+        run: cabal install --lib random
       - name: build
         run: make
