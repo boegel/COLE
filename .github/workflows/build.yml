@@ -4,6 +4,11 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-haskell@v1.1
-      - run: make
+      - name: checkout
+        uses: actions/checkout@v2
+      - name: Haskell
+        uses: actions/setup-haskell@v1.1
+      - name: deps
+        run: cabal install random
+      - name: build
+        run: make
